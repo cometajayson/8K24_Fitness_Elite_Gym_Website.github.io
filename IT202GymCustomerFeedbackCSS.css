@@ -1,0 +1,227 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'roboto', sans-serif;
+    font-size: 18px;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('C:/HTML Project Codes/Projects/Progress Codes/SE_Gym_Website_System/image resources/Gym feedback form BG.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 100px; /* Add padding to create space for the center title */
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    padding: 10px;
+    border: 3px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    margin-top: 300px; /* Adjusted margin-top */
+}
+
+
+h4 {
+    margin-bottom: 10px;
+    color: yellow;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'roboto', sans-serif;
+}
+
+h1 {
+    color: white;
+    font-family: 'roboto', sans-serif;
+    font-size: 19px;
+}
+
+label {
+    color: white;
+}
+
+input {
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+}
+
+#submit {
+    border: none;
+    background-color: yellow;
+    color: black;
+    width: 90px;
+    margin: 10px auto; /* Centering horizontally */
+    border-radius: 5px;
+    display: block; /* Ensuring it's a block-level element */
+    font-size: medium;
+}
+
+#submit:hover {
+    background-color: #b6b2a5;
+}
+
+
+#back {
+    border: none;
+    background-color: white;
+    color: black;
+    width: 90px;
+    margin: 10px auto; /* Centering horizontally */
+    border-radius: 5px;
+    display: block; /* Ensuring it's a block-level element */
+    font-size: medium;
+}
+
+#back:hover {
+    background-color: #b6b2a5;
+}
+
+
+.star-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.star-rating label {
+    display: flex;
+    align-items: center;
+}
+
+
+/* for title form */
+
+.center-title {
+    text-align: center;
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.center-title h1 {
+    font-family: 'anton', sans-serif;
+    font-size: 300%;
+}
+
+.center-title h3 {
+    color: white;
+}
+
+/*for closeness of radio buttons to text */
+
+.star-rating label {
+    margin-right: 10px; /* Adjust this value to control spacing */
+}
+.star-rating input {
+    margin-right: -90px; /* Adjust this value to control spacing */
+}
+
+/* for expanding the fill out form */
+
+input[type="text"],
+        input[type="email"],
+        input[type="datetime-local"] {
+            width: calc(100% - 20px); /* Make the input fields expand */
+            padding: 10px; /* Add some padding for better appearance */
+            margin-bottom: 20px; /* Add space between fields */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+        }
+
+
+/* for checkbox terms and conditions closeness text */
+
+.terms-container {
+    display: flex;
+    align-items: center;
+    font-size: smaller;
+}
+.terms-container input {
+    margin-right: -60px; /* Adjust this value to control spacing between checkbox and text */
+}
+
+
+/* Media queries for responsiveness */
+@media only screen and (min-width: 1920px) {
+    .container {
+        max-width: 1000px; /* Adjust container width for larger screens */
+    }
+}
+
+@media only screen and (min-width: 1680px) {
+    .container {
+        max-width: 800px; /* Adjust container width for larger screens */
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .container {
+        max-width: 700px; /* Adjust container width for larger screens */
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .container {
+        max-width: 600px; /* Adjust container width for larger screens */
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        width: 80%; /* Adjust container width for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        width: 75%; /* Adjust container width for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .container {
+        width: 70%; /* Adjust container width for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        width: 65%; /* Adjust container width for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 60%; /* Adjust container width for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        width: 55%; /* Adjust container width for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .container {
+        width: 50%; /* Adjust container width for smaller screens */
+    }
+}

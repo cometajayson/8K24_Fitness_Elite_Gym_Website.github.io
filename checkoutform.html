@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Form</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="icon" type="image/x-icon" href="C:\HTML Project Codes\Projects\Progress Codes\SE_Gym_Website_System\image resources\favicon_io_GYM SYSTEM\favicon.ico">
+</head>
+
+<body>
+    <div class="container">
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="84a908e5-c33a-44fb-9957-86c1f62827f1">
+
+            <div class="row">
+                <div class="col">
+                    <h3 class="title" style="padding-left: -100px; text-align: left;">CHECKOUT FORM</h3>
+                    <div class="inputBox">
+                        <span>Full Name :</span>
+                        <input type="text" name="full_name" placeholder="Jose P. Rizal" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <span>Email :</span>
+                        <input type="email" name="email" placeholder="username@gmail.com" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <span>Address :</span>
+                        <input type="text" name="address" placeholder="Blk,Lot,Purok/Village,Brgy,City,Province" required>
+                    </div>
+
+                    <div class="membership-box">
+                        <h3>Select Membership Plan:</h3>
+                        <div class="member-option">
+                            <div class="member">
+                                <input type="radio" id="check-daily" name="member" value="Daily Plan (₱500 + ₱800 for Access Card)" checked/>
+                                <label for="check-daily">Daily Plan <br>(₱500 + ₱800 for Access Card)</label><br><br>
+                            </div>
+
+                            <div class="member">
+                                <input type="radio" id="check-1month" name="member" value="1 Month (₱2,000 + ₱800 for Access Card)"/>
+                                <label for="check-1month">1 Month <br>(₱2,000 + ₱800 for Access Card)</label><br><br>
+                            </div>
+
+                            <div class="member">
+                                <input type="radio" id="check-3months" name="member" value="3 Months (₱5,400 + ₱800 for Access Card)"/>
+                                <label for="check-3months">3 Months <br>(₱5,400 + ₱800 for Access Card)</label><br><br>
+                            </div>
+
+                            <div class="member">
+                                <input type="radio" id="check-6months" name="member" value="6 Months (₱9,900 + ₱800 for Access Card)"/>
+                                <label for="check-6months">6 Months <br>(₱9,900 + ₱800 for Access Card)</label><br><br>
+                            </div>
+
+                            <div class="member">
+                                <input type="radio" id="check-1year" name="member" value="1 Year (₱18,000)"/>
+                                <label for="check-1year">1 Year <br>(₱18,000)</label><br><br>
+                            </div>
+
+                            <div class="member">
+                                <input type="radio" id="check-personal" name="member" value="Personal Training (₱12,000)"/>
+                                <label for="check-personal">Personal Training<br>(₱12,000)</label><br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <br><h3 class="secondtitle" style="color: #0A2029;"></h3><br>
+                    <div class="payment-box">
+                        <h3>Select Payment Method:</h3>
+                        <div class="payment-option">
+                            <div class="payment">
+                                <input type="radio" id="gcash" name="payment" value="GCASH" checked/>
+                                <label for="gcash">GCASH</label><br>
+                                <img src="C:\HTML Project Codes\Projects\Progress Codes\SE_Gym_Website_System\image resources\gcash.png" alt="GCASH">
+                            </div>
+
+                            <div class="payment">
+                                <input type="radio" id="paymaya" name="payment" value="PAYMAYA"/>
+                                <label for="paymaya">PAYMAYA</label><br>
+                                <img src="C:\HTML Project Codes\Projects\Progress Codes\SE_Gym_Website_System\image resources\paymaya.jpg" alt="PAYMAYA">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <span>Account Name :</span>
+                        <input type="text" name="account_name" placeholder="Jose P. Rizal" required>
+                    </div><br><br>
+
+                    <div class="inputBox">
+                        <span>Account Number :</span>
+                        <input type="number" name="account_number" placeholder="XXXXXXXXXXXXXXX" required>
+                    </div><br><br>
+
+                    <div class="inputBox">
+                        <span>Bill Reference Number :</span>
+                        <input type="number" name="bill_reference" placeholder="XXXXXXXXXXXXXXX" required>
+                    </div><br><br>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">CONFIRM</button>
+            <a href="IT202GymCustomerRegForm.html">
+                <button type="button" class="back-btn">BACK</button><br><br>
+            </a>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('checkout-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const form = event.target;
+            const formData = new FormData(form);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Thank you! Your response has been submitted.');
+                    form.reset(); // Reset the form
+                } else {
+                    alert('There was an error submitting your response. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your response. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	
+
+
+
+<title> 8K24 Fitness Elite Gym Customer Registration and Membership Page </title>
+
+	<link rel="stylesheet" href="IT202GymCustomerRegFormCSS.css">
+	<link rel="icon" type="image/x-icon" href="C:\HTML Project Codes\Projects\Progress Codes\SE_Gym_Website_System\image resources\favicon_io_GYM SYSTEM\favicon.ico">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+	<br><br><br>
+
+
+	<nav>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-toggle-label">
+          <div class="menu-toggle-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </label>
+        <ul class="menu">
+          <a href="IT202_gym_system.html" class="logo">8K24</a>
+          <li><a href="IT202_gym_system.html">Home</a></li>
+          <li><a href="IT202GymServices.html">Services</a></li>
+          <li><a href="IT202GymCustomerRegForm.html">Membership</a></li>
+          <li><a href="IT202AboutUsPage.html">About Us</a></li>
+          <li><a href="IT202SetAppointmentPage.html">Set Appointment</a></li>
+          <div class="button-container">
+            <a href="IT202GymCustomerRegForm.html" class="login-button-1 btn btn-outline-primary">REGISTER</a>
+          </div>
+        </ul>
+      </nav>
+	  <br><br><br>
+
+	<div>
+		<h1>BE A MEMBER</h1>
+
+		<h3 id="member">
+			To become a member, <span style="color: yellow; text-transform: none;">calculate your Body Mass Index (BMI) first before filing out the registration form.</span><br>
+			This is crucial to determine safe and appropriate programs for an individual’s body type.
+		  </h3>
+	</div>  <br>
+
+
+
+
+	<div id="bmiCalculatorContainer">
+		<h5>BMI Calculator</h5>
+		<label for="weight">Weight (kg):</label>
+		<input type="number" id="weight" placeholder="Enter weight in kg"><br><br>
+	
+		<label for="height">Height (m):</label>
+		<input type="number" id="height" placeholder="Enter height in meters"><br><br>
+	
+		<div style="text-align: center;">
+			<button onclick="calculateBMI()">Calculate</button>
+		  </div><br><br>
+		  
+		<div id="result"></div> <br>
+	
+		<script>
+			function calculateBMI() {
+				var weight = parseFloat(document.getElementById('weight').value);
+				var height = parseFloat(document.getElementById('height').value);
+	
+				if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+					document.getElementById('result').innerHTML = 'Please enter valid weight and height.';
+					return;
+				}
+	
+				var bmi = weight / Math.pow(height, 2);
+				var status = '';
+	
+				if (bmi < 18.5) {
+					status = 'Underweight';
+				} else if (bmi >= 18.5 && bmi <= 24.9) {
+					status = 'in Normal weight';
+				} else if (bmi >= 25.0 && bmi <= 29.9) {
+					status = 'Overweight';
+				} else {
+					status = 'Obese';
+				}
+	
+				var resultText = '<span style="color: white;">Your BMI is ' + bmi.toFixed(2) + ' kg/m². ';
+				resultText += 'You are ' + status + '.</span>';
+				document.getElementById('result').innerHTML = resultText;
+			}
+		</script>
+	
+	
+	<h3>- BMI Categories:</h3>
+	<h3>- Underweight: BMI < 18.5 </h3>
+	<h3>- Normal weight: BMI 18.5 - 24.9</h3>
+	<h3>- Overweight: BMI 25 - 29.9</h3>
+	<h3>- Obesity: BMI ≥ 30</h3>
+	</div>
+
+	<br><br>
+
+	<div class="container">
+		<form method="post" action="https://script.google.com/macros/s/AKfycby2Ckn_7Gm8BnWrFipM4NXkHElhXlXEa1AUrJ23eo33Okt9NT9WwZj6Q4bIqwPFWxyMxA/exec" name="contact-form">
+
+
+
+		<h4>PERSONAL INFORMATION</h4> <br>
+
+		<h5>Full Name</h5>
+		<input type="text" name="your-name" placeholder="Ex. Jane D. Cruz"> <br>
+
+		<h5>Email</h5>
+		<input type="email" name="your-email" placeholder="Ex. janecruz@gmail.com">
+
+		<h5>Phone Number</h5>
+		<input type="text" name="your-number" placeholder="09XXXXXXXXX">
+
+		<h5>Date of Birth</h5>
+		<input type="date" name="your-date-of-birth" id="dob-input">
+
+
+		<h5>Address:</h5>
+		<textarea name="Address Information" rows="2" placeholder="Customer's Address"></textarea> <br>
+		
+		<h5>Sex:</h5>
+
+		<input type="radio" id="male" name="sex" value="male">
+		<label for="male" class="radio-label">Male</label> <br>
+
+		<input type="radio" id="female" name="sex" value="female">
+		<label for="female" class="radio-label">Female</label> <br>
+
+		  
+		  <h5>Height</h5>
+		  <input type="text" name="your-height" placeholder="Height in meters">
+
+		  <h5>Weight</h5>
+		  <input type="text" name="your-weight" placeholder="Weight in Kg">
+
+		  <h5>Desired Weight</h5>
+		  <input type="text" name="your-desired-weight" placeholder="Your desired weight">
+
+		  <h5>Body Mass Index (BMI)</h5>
+		  <h3>- BMI = weight (kg) ÷ height² (meters)</h3>
+		  <h3>- ex. BMI = 45kg ÷ (1.65m)² = 16.51kg/m²</h3>
+		  <input type="text" name="your-bmi" placeholder="Your Body Mass Index (BMI)">
+
+			<br><br>
+
+		
+		  <h5>Additonal Information:</h5>
+		  <textarea name="Additional Information" rows="2" placeholder="Customer's Additional Information"></textarea> <br>
+
+		  <div class="terms-container">
+			<input type="checkbox" id="termsCheckbox" name="termsCheckbox">
+			<label for="termsCheckbox">I have read and agree to the <a href="Gym_Rules_And_Regulations_01_RF.html" style="color: yellow;">terms and conditions</a> policy</label>
+		</div>
+
+
+		<input type="submit" value="SUBMIT" id="submit">
+
+
+		<div class="center-button">
+			<button 
+    onclick="window.location.href='IT202_gym_system.html'" class="btn btn-secondary" style="width: 200px; font-weight: bold; color: black; 
+		background-color: white; 
+        transition: background-color 0.2s ease, color 0.2s ease;"
+    onmouseover="this.style.backgroundColor='#d3d3d3'; this.style.color='black';" 
+    onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+    Back
+</button>
+
+		  </div>
+		  
+	</form>
+</div>
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+<div class="container-1">
+	
+	<h1 class="heading"> MEMBERSHIP PLANS</h1>
+	<p class="subheading">Subscribe to our plans that suits your budget and fitness goals.</p>
+	<div class="box-container">
+		<div class="box">
+			<h3 id="heading">Daily</h3>
+			<h2>₱500</h2>
+			<p>✔ 1 person</p>
+			<p>✔ access to all equipment</p>
+			<p>✔ ₱800 for Access Card</p>
+			<a href="checkoutform.html" class="btn">Subscribe</a>
+		</div>
+
+		<div class="box">
+			<h3 id="heading">1-Month</h3>
+			<h2>₱2,000</h2>
+			<p>✔ 1 person</p>
+			<p>✔ access to all equipment</p>
+			<p>✔ ₱800 for Access Card</p>           
+			<a href="checkoutform.html" class="btn">Subscribe</a>
+		</div>
+
+		<div class="box">
+			<h3 id="heading">3-Month</h3>
+			<h2>₱5,400</h2>
+			<p>✔ 1 person</p>
+			<p>✔ access to all equipment</p>
+			<p>✔ access to all programs</p>    
+			<p>✔ ₱800 for Access Card</p>           
+			<a href="checkoutform.html" class="btn">Subscribe</a>
+		</div>
+
+		<div class="box">
+			<h3 id="heading">6-Month</h3>
+			<h2>₱9,900</h2>
+			<p>✔ 1 person</p>
+			<p>✔ access to all equipment</p>
+			<p>✔ access to all programs</p>
+			<p>✔ ₱800 for Access Card</p>
+			<a href="checkoutform.html" class="btn">Subscribe</a>
+		</div>
+
+		<div class="box">
+			<h3 id="heading">1-Year</h3>
+			<h2>₱18,000</h2>
+			<p>✔ 1 person</p>
+			<p>✔ access to all equipment</p>
+			<p>✔ access to all programs</p>
+			<p>✔ bag, cap, ID lace, tshirt</p>
+			<p>✔ Access Card</p>
+			<a href="checkoutform.html" class="btn">Subscribe</a>
+		</div>
+
+		<div class="box">
+			<h3 id="heading">PERSONAL TRAINING</h3>
+			<h2>₱12,000</h2>
+			<p>✔ 1 person</p>
+			<p>✔ access to all equipment</p>
+			<p>✔ choose a desired service</p>
+			<a href="checkoutform.html" class="btn">Subscribe</a>
+		</div>
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+</div>
+
+
+<script src="IT202GymCustomerRegFormJS.js"> </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+
+<title>8K24 Fitness Elite Gym Customer Appointment Form Page</title>
+
+<link rel="stylesheet" href="IT202SetAppointmentFormCSS.css">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="C:\HTML Project Codes\Projects\Progress Codes\SE_Gym_Website_System\image resources\favicon_io_GYM SYSTEM\favicon.ico">
+
+</head>
+<body>
+
+<div class="fitness-container">
+    <h1>After browsing our services, membership plans, and getting to know us, <span class="highlight-text">start achieving your fitness goals</span> by booking an appointment with us.</h1>
+</div>
+
+<div class="container">
+    <div class="form-container">
+        <form method="post" action="https://script.google.com/macros/s/AKfycbyrX5fZAAlv3wyiHDMri1TVKj_vimyUbhvCO5cCXPpAlE9gtW-L2I_ipu1kNRbL9YW_YA/exec" name="contact-form">
+
+            <h4>APPOINTMENT FORM</h4> <br>
+
+            <h1>Customer Name</h1> <br>
+            <input type="text" name="your-name" placeholder="Jose  P. Rizal">
+
+            <h1>Email</h1> <br>
+            <input type="email" name="your-email" placeholder="rizaljose@gmail.com">
+
+            <h1>Preferred Date</h1> <br>
+            <input type="datetime-local" name="your-datetime">
+
+            <div class="star-rating">
+                <h1>Preferred Trainer</h1> <br>
+                <label for="Trainer Arnault Kamatoy"><input type="radio" id="star5" name="trainer" value="Trainer Arnault Kamatoy">Trainer Arnault Kamatoy</label>
+                <label for="Trainer Kin Lasian"><input type="radio" id="star4" name="trainer" value="Trainer Kin Lasian">Trainer Kin Lasian</label> <br>
+            </div>
+
+            <h1>Additional Information</h1> <br>
+            <textarea name="add info" rows="2" placeholder="You can express your thoughts and preferences here."></textarea>
+
+            <div class="terms-container">
+                <input type="checkbox" id="termsCheckbox" name="termsCheckbox">
+                <label for="termsCheckbox">I have read and agree to the <a href="Gym_Rules_And_Regulations_01_RF.html" style="color: yellow;">terms and conditions</a> policy</label>
+            </div>
+
+            <input type="submit" value="SUBMIT" id="submit" class="btn btn-primary">
+            <div class="center-button">
+                <button onclick="window.location.href='IT202_gym_system.html'" class="btn btn-secondary">Back</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script src="IT202SetAppointmentFormJS.js"></script>
+
+</body>
+</html>
